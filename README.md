@@ -107,6 +107,7 @@ Create a file named `config.h` in the `firmware/` directory:
 #define TOMTOM_API_KEY "YOUR API KEY"
 #define NTP_SERVER "pool.ntp.org"
 #define TIMEZONE_OFFSET +5  // Adjust to your region
+```
 
 ##⚙️ Setup Instructions
 Install Arduino IDE or PlatformIO
@@ -135,7 +136,8 @@ Select the right COM port
 
 Upload main.ino
 
-🧠 Future Enhancements
+
+##🧠 Future Enhancements
 🗣 Voice assistant (via I2S Mic + cloud NLP)
 
 🧠 Local AI for gesture/voice recognition
@@ -146,7 +148,8 @@ Upload main.ino
 
 🌙 Full sleep-wake cycle power management
 
-🤝 Contributing
+
+##🤝 Contributing
 Pull requests, ideas, and feedback are welcome!
 
 If you want to:
@@ -161,10 +164,10 @@ Build a modular frame for different face shapes
 
 Feel free to open an issue or fork this project.
 
-📜 License
+##📜 License
 MIT License © 2025 Zikria Akhtar
 
-🙏 Credits & Inspiration
+##🙏 Credits & Inspiration
 fbiego/ESP32_OLED_BLE: https://github.com/fbiego/ESP32_OLED_BLE
 
 Chrono Android BLE App: https://play.google.com/store/apps/details?id=com.fbiego.ble
