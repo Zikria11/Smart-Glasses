@@ -107,3 +107,72 @@ Create a file named `config.h` in the `firmware/` directory:
 #define TOMTOM_API_KEY "YOUR API KEY"
 #define NTP_SERVER "pool.ntp.org"
 #define TIMEZONE_OFFSET +5  // Adjust to your region
+
+##⚙️ Setup Instructions
+Install Arduino IDE or PlatformIO
+
+Add ESP32 Board Support
+
+Boards Manager URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+Install Libraries:
+
+WiFiManager
+
+Adafruit_GFX, Adafruit_SSD1306
+
+ArduinoJson
+
+HTTPClient
+
+BLEDevice (ESP32 BLE library)
+
+Upload Code to ESP32
+
+Connect ESP32 via USB
+
+Select the right COM port
+
+Upload main.ino
+
+🧠 Future Enhancements
+🗣 Voice assistant (via I2S Mic + cloud NLP)
+
+🧠 Local AI for gesture/voice recognition
+
+📸 ESP32-CAM integration for object/person detection
+
+🔊 Bone conduction speakers for silent audio feedback
+
+🌙 Full sleep-wake cycle power management
+
+🤝 Contributing
+Pull requests, ideas, and feedback are welcome!
+
+If you want to:
+
+Add more modes (calendar, maps, steps)
+
+Improve the UI/UX on OLED
+
+Port the notification app to iOS
+
+Build a modular frame for different face shapes
+
+Feel free to open an issue or fork this project.
+
+📜 License
+MIT License © 2025 Zikria Akhtar
+
+🙏 Credits & Inspiration
+fbiego/ESP32_OLED_BLE: https://github.com/fbiego/ESP32_OLED_BLE
+
+Chrono Android BLE App: https://play.google.com/store/apps/details?id=com.fbiego.ble
+
+ESP32 Docs
+
+TomTom Developer Portal
+
+Adafruit GFX & OLED Libraries
+
+
