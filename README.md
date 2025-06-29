@@ -104,6 +104,6 @@ Tap the **Touch Sensor** to switch modes.
 Create a file named `config.h` in the `firmware/` directory:
 
 ```cpp
-#define TOMTOM_API_KEY "m2wArn6paTSv7prXcXK2cUhclrrFG9aC"
+#define TOMTOM_API_KEY "YOUR API KEY"
 #define NTP_SERVER "pool.ntp.org"
 #define TIMEZONE_OFFSET +5  // Adjust to your region
