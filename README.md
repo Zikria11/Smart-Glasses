@@ -112,41 +112,41 @@ Create a file named `config.h` in the `firmware/` directory:
 ## ⚙️ Setup Instructions
 Install Arduino IDE or PlatformIO
 
-Add ESP32 Board Support
+- Add ESP32 Board Support
 
-Boards Manager URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+- Boards Manager URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-Install Libraries:
+- Install Libraries:
 
-WiFiManager
+- WiFiManager
 
-Adafruit_GFX, Adafruit_SSD1306
+- Adafruit_GFX, Adafruit_SSD1306
 
-ArduinoJson
+- ArduinoJson
 
-HTTPClient
+- HTTPClient
 
-BLEDevice (ESP32 BLE library)
+- BLEDevice (ESP32 BLE library)
 
-Upload Code to ESP32
+- Upload Code to ESP32
 
-Connect ESP32 via USB
+- Connect ESP32 via USB
 
-Select the right COM port
+- Select the right COM port
 
-Upload main.ino
+- Upload main.ino
 
 
 ## 🧠 Future Enhancements
 🗣 Voice assistant (via I2S Mic + cloud NLP)
 
-🧠 Local AI for gesture/voice recognition
+- 🧠 Local AI for gesture/voice recognition
 
-📸 ESP32-CAM integration for object/person detection
+- 📸 ESP32-CAM integration for object/person detection
 
-🔊 Bone conduction speakers for silent audio feedback
+- 🔊 Bone conduction speakers for silent audio feedback
 
-🌙 Full sleep-wake cycle power management
+- 🌙 Full sleep-wake cycle power management
 
 
 ## 🤝 Contributing
@@ -154,15 +154,15 @@ Pull requests, ideas, and feedback are welcome!
 
 If you want to:
 
-Add more modes (calendar, maps, steps)
+- Add more modes (calendar, maps, steps)
 
-Improve the UI/UX on OLED
+- Improve the UI/UX on OLED
 
-Port the notification app to iOS
+- Port the notification app to iOS
 
-Build a modular frame for different face shapes
+- Build a modular frame for different face shapes
 
-Feel free to open an issue or fork this project.
+- Feel free to open an issue or fork this project.
 
 ## 📜 License
 MIT License © 2025 Zikria Akhtar
@@ -170,12 +170,12 @@ MIT License © 2025 Zikria Akhtar
 ##🙏 Credits & Inspiration
 fbiego/ESP32_OLED_BLE: https://github.com/fbiego/ESP32_OLED_BLE
 
-Chrono Android BLE App: https://play.google.com/store/apps/details?id=com.fbiego.ble
+- Chrono Android BLE App: https://play.google.com/store/apps/details?id=com.fbiego.ble
 
-ESP32 Docs
+- ESP32 Docs
 
-TomTom Developer Portal
+- TomTom Developer Portal
 
-Adafruit GFX & OLED Libraries
+- Adafruit GFX & OLED Libraries
 
 
