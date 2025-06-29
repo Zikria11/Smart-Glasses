@@ -1,8 +1,8 @@
 # 🧠 Smart Glasses with ESP32
 
-Smart Glasses is a wearable, IoT-powered embedded system built using the ESP32 microcontroller. Designed for real-time interaction, this project enables hands-free access to essential information like time, weather, and phone notifications through a minimal OLED display. It features a capacitive touch interface for mode switching, integrated battery monitoring, and planned AI-based features in future upgrades.
+Smart Glasses is a wearable, IoT-powered embedded system built using the ESP32 microcontroller. Designed for real-time interaction, this project enables hands-free access to essential information like time, weather, and phone notifications through a compact OLED display. It supports WiFi and Bluetooth-based notification delivery, touch-based mode switching, and includes battery monitoring for portable usage.
 
-Developed as an innovative DIY and IoT-semester project, these glasses demonstrate practical implementation of embedded software, low-power wearable electronics, and smart device integration.
+Developed as an innovative IoT-semester project, these glasses demonstrate practical implementation of embedded software, wearable computing, and smart device integration.
 
 ---
 
@@ -12,40 +12,98 @@ Developed as an innovative DIY and IoT-semester project, these glasses demonstra
 |----------------------------|-----------------------------------------------------------------------------|
 | 📶 **WiFi Auto-Setup**      | ESP32 launches a configuration portal using WiFiManager on first boot       |
 | 🕒 **Time Mode**            | Displays live time from an NTP server                                       |
-| 🌦 **Weather Mode**         | Fetches real-time weather data using [TomTom Weather API](https://developer.tomtom.com/) |
-| 🔔 **Notification Mode**    | Receives and displays push notifications from a paired Android device      |
-| 🔋 **Battery Monitoring**   | Real-time display of battery voltage and charge status                      |
-| 👆 **Touch-based Control**  | Change display modes with a simple tap on capacitive touch sensor           |
-| ⚡ **Low Power Optimization**| Efficient display updates and sleep functions to extend battery life       |
-| 📷 **ESP32-CAM Support (Future)** | For computer vision integration like face detection or photo capture   |
+| 🌦 **Weather Mode**         | Fetches weather data via [TomTom Weather API](https://developer.tomtom.com/) |
+| 🔔 **Notification Mode**    | Receives notifications via **BLE** using the **Chrono Android App**        |
+| 🔋 **Battery Monitoring**   | Shows real-time battery voltage and charge status                          |
+| 👆 **Touch-based Control**  | Capacitive touch sensor cycles through display modes                       |
+| ⚡ **Low Power Optimization**| Power-efficient display and connectivity design                            |
+| 📷 **ESP32-CAM Support (Future)** | Vision-based features like facial detection                      |
 
 ---
 
 ## 🧑‍💻 Tech Stack
 
-- **Microcontroller**: ESP32 Dev Board (with WiFi + Bluetooth)
+- **Microcontroller**: ESP32 Dev Board (WiFi + BLE support)
 - **Display**: OLED 0.96" SSD1306 (I2C)
-- **Programming Language**: C++ (Arduino)
+- **Language**: C++ (Arduino)
 - **IDE**: Arduino IDE / PlatformIO
-- **APIs**: TomTom Weather, NTP
-- **Android App**: Custom APK to send notifications via local WiFi
+- **APIs**: TomTom Weather API, NTP server
+- **Android App**: [Chrono Bluetooth App](https://play.google.com/store/apps/details?id=com.fbiego.ble)
 
 ---
 
-## 🧱 Hardware Components
+## 📦 Hardware Components
 
 | Component                 | Purpose                                 |
 |--------------------------|-----------------------------------------|
-| ESP32 Dev Board          | Main microcontroller with WiFi support  |
-| OLED Display (SSD1306)   | UI interface for user                   |
-| TP4056 Charging Module   | Battery management and USB charging     |
-| LiPo Battery (3.7V)      | Portable power source                   |
-| Capacitive Touch Sensor  | Physical user input (mode switching)    |
-| ESP32-CAM (Optional)     | Vision-based upgrades                   |
+| ESP32 Dev Board          | Main microcontroller                    |
+| OLED Display (SSD1306)   | Main user interface                     |
+| TP4056 Charging Module   | Safe LiPo charging                      |
+| LiPo Battery (3.7V)      | Portable power                          |
+| Capacitive Touch Sensor  | User input for switching modes          |
+| ESP32-CAM (Optional)     | For future image-based features         |
 | DHT11 / Sound Sensor     | Experimental extensions                 |
-| Bone Conduction Speaker  | Future sound integration                |
-| Glasses Frame (3D printed / DIY) | Wearable housing                 |
+| Bone Conduction Speaker  | (Planned) Audio feedback                |
+| Glasses Frame (DIY/3D print) | Wearable integration               |
 
 ---
 
 ## 📁 Project Directory
+
+Smart-Glasses/
+├── firmware/
+│ ├── main.ino # Core firmware logic
+│ ├── config.h # API keys and constants
+├── android-app/ # Optional custom app for sending data
+├── docs/
+│ ├── schematics.pdf # Circuit diagrams
+│ └── block-diagram.png # System overview
+├── assets/ # Images and videos
+└── README.md
+
+
+---
+
+## 📡 Connectivity Options
+
+### 🔷 BLE Notifications via Chrono App
+
+This project supports Bluetooth notifications via the **Chrono app**, available on Android:
+
+- App: [Chrono - BLE Notifications](https://play.google.com/store/apps/details?id=com.fbiego.ble)
+- Connect the app to the ESP32 BLE service
+- Notifications from your phone will be forwarded to the OLED
+
+**Note**: BLE connectivity and data parsing were heavily inspired by the [fbiego/ESP32_OLED_BLE](https://github.com/fbiego/ESP32_OLED_BLE) open-source project. Special thanks for the BLE UART structure and OLED integration.
+
+---
+
+### 📶 WiFi Configuration
+
+- On first boot, ESP32 opens a WiFi AP (e.g., `SmartGlass-Setup`)
+- Connect via phone and enter WiFi credentials
+- ESP32 stores these for future boots and auto-connects
+
+---
+
+## 🖥 Display Modes
+
+| Mode             | Info Displayed                            |
+|------------------|--------------------------------------------|
+| Time             | Current time (via NTP)                     |
+| Weather          | Temperature, humidity, and condition       |
+| Notifications    | Latest phone notification (via BLE)        |
+| Battery Status   | Current battery voltage and health         |
+
+Tap the **Touch Sensor** to switch modes.
+
+---
+
+## 📜 API Key Configuration
+
+Create a file named `config.h` in the `firmware/` directory:
+
+```cpp
+#define TOMTOM_API_KEY "m2wArn6paTSv7prXcXK2cUhclrrFG9aC"
+#define NTP_SERVER "pool.ntp.org"
+#define TIMEZONE_OFFSET +5  // Adjust to your region
